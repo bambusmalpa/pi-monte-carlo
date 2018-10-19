@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
     <style>
@@ -20,6 +21,10 @@
         }
 
         canvas {
+            border: 1px solid #000;
+        }
+
+        #defaultCanvas0 {
             margin-left: auto;
             margin-right: auto;
             display: block;
@@ -36,7 +41,10 @@
 </head>
 
 <body>
+
+    <div id="chart"></div>
     <script src="sketch.js"></script>
+
 </body>
 
 </html>
