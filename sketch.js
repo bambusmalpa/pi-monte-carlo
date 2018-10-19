@@ -69,7 +69,9 @@ let drawPoints = () => {
     }
 }
 let chartUpdate = () => {
-    return currentPi;
+    if (action == true) {
+        return currentPi;
+    }
 }
 
 
@@ -85,4 +87,4 @@ setInterval(function () {
             [chartUpdate()]
         ]
     }, [0])
-}, 200);
+}, 100);
