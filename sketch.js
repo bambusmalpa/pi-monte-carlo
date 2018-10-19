@@ -98,14 +98,3 @@ let chartRun = () => {
         }, [0]);
     }
 }
-
-
-
-
-// setInterval(function () {
-//     Plotly.extendTraces('chart', {
-//         y: [
-//             [chartUpdate()]
-//         ]
-//     }, [0])
-// }, 100);
