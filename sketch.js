@@ -10,9 +10,12 @@ let sampleInput;
 let action = false;
 let currentPi;
 let piArr = [];
+let resetButton;
 
 function setup() {
     createCanvas(canvSize, canvSize);
+    resetButton = createButton("RESET");
+    resetButton.mouseClicked(reset)
     monitor = createP("");
     start = createButton("START");
     sampleInput = createInput(arrSize);
@@ -26,6 +29,10 @@ function setup() {
     createRandomPoints();
 
 
+}
+
+let reset = () => {
+    action = false;
 }
 
 
@@ -44,6 +51,7 @@ function draw() {
     if (iterator >= arrSize) {
         noLoop();
     }
+    chartRun();
 }
 let drawBoard = () => {
     noFill();
@@ -69,10 +77,10 @@ let drawPoints = () => {
     }
 }
 let chartUpdate = () => {
-    if (action == true) {
-        return currentPi;
-    }
+
+    return currentPi;
 }
+
 
 
 
@@ -81,10 +89,23 @@ Plotly.plot('chart', [{
     type: 'line'
 }]);
 
-setInterval(function () {
-    Plotly.extendTraces('chart', {
-        y: [
-            [chartUpdate()]
-        ]
-    }, [0])
-}, 100);
+let chartRun = () => {
+    if (action == true) {
+        Plotly.extendTraces('chart', {
+            y: [
+                [chartUpdate()]
+            ]
+        }, [0]);
+    }
+}
+
+
+
+
+// setInterval(function () {
+//     Plotly.extendTraces('chart', {
+//         y: [
+//             [chartUpdate()]
+//         ]
+//     }, [0])
+// }, 100);
